@@ -5,6 +5,10 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    font-family: ${(props) => props.theme.fonts.primary};
+  }
+
 
   body,
   h1,
