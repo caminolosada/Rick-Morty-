@@ -1,6 +1,12 @@
+import { charactersMocks } from "../mocks/charactersMock";
+import { useAppDispatch } from "../store";
+import { loadCharactersActionCreator } from "../store/characters/charactersSlice";
 import CharacterListPageStyled from "./CharacterListPageStyled";
 
 const CharacterListPage = (): React.ReactElement => {
+  const dispatch = useAppDispatch();
+
+  dispatch(loadCharactersActionCreator(charactersMocks));
   return (
     <CharacterListPageStyled>
       <h1 className="title">Characters</h1>
