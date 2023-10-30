@@ -1,6 +1,6 @@
 import { CharacterStructure } from "../types";
 
-export const charactersMocks: CharacterStructure[] = [
+export const charactersMock: CharacterStructure[] = [
   {
     id: 1,
     image: "https://rickandmortyapi.com/api/character/avatar/1.jpeg",

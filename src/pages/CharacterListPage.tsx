@@ -1,5 +1,5 @@
 import CharacterList from "../components/CharacterList/CharacterList";
-import { charactersMocks } from "../mocks/charactersMock";
+import { charactersMock } from "../mocks/charactersMock";
 import { useAppDispatch } from "../store";
 import { loadCharactersActionCreator } from "../store/characters/charactersSlice";
 import CharacterListPageStyled from "./CharacterListPageStyled";
@@ -7,7 +7,7 @@ import CharacterListPageStyled from "./CharacterListPageStyled";
 const CharacterListPage = (): React.ReactElement => {
   const dispatch = useAppDispatch();
 
-  dispatch(loadCharactersActionCreator(charactersMocks));
+  dispatch(loadCharactersActionCreator(charactersMock));
   return (
     <>
       <CharacterListPageStyled>
@@ -21,7 +21,7 @@ const CharacterListPage = (): React.ReactElement => {
           />
         </div>
       </CharacterListPageStyled>
-      <CharacterList characterProps={charactersMocks} />
+      <CharacterList characterProps={charactersMock} />
     </>
   );
 };

@@ -1,4 +1,4 @@
-import { charactersMocks } from "../../mocks/charactersMock";
+import { charactersMock } from "../../mocks/charactersMock";
 import { CharacterState, CharacterStructure } from "../../types";
 import {
   charactersReducer,
@@ -13,11 +13,11 @@ describe("Given a loadCharacters reducer", () => {
       const currentCharactersState: CharacterState = {
         charactersData: currentEmptyState,
       };
-      const loadCharacters = loadCharactersActionCreator(charactersMocks);
+      const loadCharacters = loadCharactersActionCreator(charactersMock);
 
       const expectedNewCharactersState: CharacterState = {
         ...currentCharactersState,
-        charactersData: charactersMocks,
+        charactersData: charactersMock,
       };
 
       const newState: CharacterState = charactersReducer(
