@@ -15,11 +15,11 @@ const theme: DefaultTheme = {
   },
 
   fontSize: {
-    small: "1.25 rem",
-    medium: "1.375 rem",
-    mediumLarge: "1.563 rem",
-    large: "2 rem",
-    extraLarge: "3.125 rem",
+    small: "20px",
+    medium: "22px",
+    mediumLarge: "25px",
+    large: "32px",
+    extraLarge: "50px",
   },
 
   fontWeight: {

@@ -3,17 +3,18 @@ import { styled } from "styled-components";
 const CharacterListPageStyled = styled.div`
   display: flex;
   align-items: center;
-  padding: 0 29px 0 10px;
 
   .title {
     color: ${(props) => props.theme.colors.generalText};
     font-size: ${(props) => props.theme.fontSize.medium};
+    font-weight: ${(props) => props.theme.fontWeight.bold};
     margin-top: 100px;
+    margin-bottom: 20px;
   }
 
   .decoration {
     margin-left: 15px;
-    margin-top: 100px;
+    margin-top: 80px;
     width: calc(100% - 150px);
 
     img {

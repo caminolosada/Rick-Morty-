@@ -1,4 +1,5 @@
 import { CharacterStructure } from "../../types";
+import CharacterCard from "../CharacterCard/CharacterCard";
 import CharacterListStyled from "./CharacterListStyled";
 
 interface CharacterListProps {
@@ -12,7 +13,7 @@ const CharacterList = ({
     <CharacterListStyled className="characters-list">
       {characterProps.map((character) => (
         <li className="characters-list__card" key={character.id}>
-          <h2 className="characters-list__card__name">{character.name}</h2>
+          <CharacterCard characterProps={character} />
         </li>
       ))}
     </CharacterListStyled>
