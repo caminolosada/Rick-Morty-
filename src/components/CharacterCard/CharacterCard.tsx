@@ -1,4 +1,5 @@
 import { CharacterStructure } from "../../types";
+import CharacterCardStyled from "./CharacterCardStyled";
 
 interface CharacterCardProps {
   characterProps: CharacterStructure;
@@ -8,9 +9,9 @@ const CharacterCard = ({
   characterProps,
 }: CharacterCardProps): React.ReactElement => {
   return (
-    <article className="character">
+    <CharacterCardStyled className="character">
       <img
-        className="character__image"
+        className="character-image"
         src={characterProps.image}
         alt={`${characterProps.name}`}
         width="150px"
@@ -22,10 +23,10 @@ const CharacterCard = ({
           {characterProps.species}
         </span>
         <span className="character-info__ubication">
-          You can find me in {characterProps.location}
+          You can find me in <strong>{characterProps.location}</strong>
         </span>
       </div>
-    </article>
+    </CharacterCardStyled>
   );
 };
 
