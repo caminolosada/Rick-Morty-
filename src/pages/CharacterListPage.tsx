@@ -1,13 +1,22 @@
+import { useEffect } from "react";
 import CharacterList from "../components/CharacterList/CharacterList";
-import { charactersMock } from "../mocks/charactersMock";
-import { useAppDispatch } from "../store";
+import useCharacters from "../hooks/useCharacters/useCharacters";
+import { useAppDispatch, useAppSelector } from "../store";
 import { loadCharactersActionCreator } from "../store/characters/charactersSlice";
 import CharacterListPageStyled from "./CharacterListPageStyled";
 
 const CharacterListPage = (): React.ReactElement => {
+  const characters = useAppSelector((state) => state.characters.results);
+  const { getCharacters } = useCharacters();
   const dispatch = useAppDispatch();
 
-  dispatch(loadCharactersActionCreator(charactersMock));
+  useEffect(() => {
+    (async () => {
+      const characters = await getCharacters();
+
+      dispatch(loadCharactersActionCreator(characters));
+    })();
+  }, [dispatch, getCharacters]);
   return (
     <>
       <CharacterListPageStyled>
@@ -21,7 +30,7 @@ const CharacterListPage = (): React.ReactElement => {
           />
         </div>
       </CharacterListPageStyled>
-      <CharacterList characterProps={charactersMock} />
+      <CharacterList characterProps={characters} />
     </>
   );
 };
