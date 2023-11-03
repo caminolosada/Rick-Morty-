@@ -6,11 +6,14 @@ export const apiUrl = import.meta.env.VITE_API_URL;
 
 const useCharacters = () => {
   const getCharacters = useCallback(async (): Promise<DbResponseStructure> => {
-    const { data: DbResponseStructure } = await axios.get<DbResponseStructure>(
-      `${apiUrl}/character`
-    );
+    try {
+      const { data: DbResponseStructure } =
+        await axios.get<DbResponseStructure>(`${apiUrl}/character`);
 
-    return DbResponseStructure;
+      return DbResponseStructure;
+    } catch (error) {
+      throw new Error("Can't get characters");
+    }
   }, []);
   return { getCharacters };
 };
