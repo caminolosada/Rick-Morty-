@@ -1,4 +1,4 @@
-import { DbResponseStructure } from "../types";
+import { CharacterStructure, DbResponseStructure } from "../types";
 
 export const charactersMock: DbResponseStructure = {
   info: {
@@ -153,4 +153,16 @@ export const charactersMock: DbResponseStructure = {
       created: "2017-11-04T18:50:21.651Z",
     },
   ],
+};
+
+export const emptyState: CharacterStructure[] = [];
+
+export const emptyMock: DbResponseStructure = {
+  results: emptyState,
+  info: {
+    count: 0,
+    pages: 0,
+    next: "",
+    prev: "",
+  },
 };
