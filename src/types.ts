@@ -1,12 +1,31 @@
 export interface CharacterStructure {
   id: number;
-  image: string;
   name: string;
-  species: string;
-  location: string;
+  image: string;
   status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: NameUrlStructure;
+  location: NameUrlStructure;
+  episode: string[];
+  url: string;
+  created: string;
 }
 
-export interface CharacterState {
-  charactersData: CharacterStructure[];
+export interface DbResponseStructure {
+  info: InfoStructure;
+  results: CharacterStructure[];
+}
+
+export interface InfoStructure {
+  count: number;
+  pages: number;
+  next: string | null;
+  prev: string | null;
+}
+
+export interface NameUrlStructure {
+  name: string;
+  url: string;
 }
