@@ -1,12 +1,14 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CharacterStructure } from "../../types";
+import { DbResponseStructure } from "../../types";
 
-export interface CharactersState {
-  charactersData: CharacterStructure[];
-}
-
-const initialCharactersState: CharactersState = {
-  charactersData: [],
+const initialCharactersState: DbResponseStructure = {
+  results: [],
+  info: {
+    count: 0,
+    pages: 0,
+    next: "",
+    prev: "",
+  },
 };
 
 export const charactersSlice = createSlice({
@@ -14,12 +16,9 @@ export const charactersSlice = createSlice({
   initialState: initialCharactersState,
   reducers: {
     loadCharacters: (
-      currentCharactersState,
-      action: PayloadAction<CharacterStructure[]>
-    ): CharactersState => ({
-      ...currentCharactersState,
-      charactersData: [...action.payload],
-    }),
+      _currentCharactersState,
+      action: PayloadAction<DbResponseStructure>
+    ): DbResponseStructure => action.payload,
   },
 });
 

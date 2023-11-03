@@ -1,5 +1,5 @@
 import { charactersMock } from "../../mocks/charactersMock";
-import { CharacterState, CharacterStructure } from "../../types";
+import { CharacterStructure, DbResponseStructure } from "../../types";
 import {
   charactersReducer,
   loadCharactersActionCreator,
@@ -10,17 +10,25 @@ describe("Given a loadCharacters reducer", () => {
     test("Then it shoul return a list with two characters", () => {
       const currentEmptyState: CharacterStructure[] = [];
 
-      const currentCharactersState: CharacterState = {
-        charactersData: currentEmptyState,
+      const currentCharactersState: DbResponseStructure = {
+        results: currentEmptyState,
+        info: {
+          count: 0,
+          pages: 0,
+          next: "",
+          prev: "",
+        },
       };
+
       const loadCharacters = loadCharactersActionCreator(charactersMock);
 
-      const expectedNewCharactersState: CharacterState = {
+      const expectedNewCharactersState: DbResponseStructure = {
         ...currentCharactersState,
-        charactersData: charactersMock,
+        results: charactersMock.results,
+        info: charactersMock.info,
       };
 
-      const newState: CharacterState = charactersReducer(
+      const newState: DbResponseStructure = charactersReducer(
         currentCharactersState,
         loadCharacters
       );
