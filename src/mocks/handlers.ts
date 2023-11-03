@@ -1,7 +1,8 @@
 import { http, HttpResponse } from "msw";
-import { apiUrl } from "../hooks/useCharacters/useCharacters";
 import { DbResponseStructure } from "../types";
 import { charactersMock, emptyMock } from "./charactersMock";
+
+export const apiUrl = import.meta.env.VITE_API_URL;
 
 export const handlers = [
   http.get(`${apiUrl}/character`, () => {
