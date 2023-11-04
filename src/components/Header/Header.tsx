@@ -4,6 +4,7 @@ const Header = (): React.ReactElement => {
   return (
     <HeaderStyled>
       <img
+        className="logo"
         src="/images/rick-morty-logo.svg"
         alt="rick and morty logo"
         width={262}

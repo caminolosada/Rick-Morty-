@@ -6,6 +6,21 @@ const CharacterListStyled = styled.ul`
   align-items: center;
   gap: 30px;
   margin-bottom: 275px;
+
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 950px) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 `;
 
 export default CharacterListStyled;
