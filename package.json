@@ -16,6 +16,7 @@
   "dependencies": {
     "@fontsource/nunito": "^5.0.15",
     "@reduxjs/toolkit": "^1.9.5",
+    "axios": "^1.6.0",
     "expo-font": "^11.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -42,6 +43,7 @@
     "husky": "^8.0.0",
     "jest-environment-jsdom": "^29.5.0",
     "lint-staged": "^13.2.1",
+    "msw": "^2.0.2",
     "prettier": "^2.8.8",
     "styled-components": "^6.1.0",
     "ts-jest": "^29.1.0",

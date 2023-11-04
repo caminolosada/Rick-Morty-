@@ -23,7 +23,7 @@ const CharacterCard = ({
           {characterProps.species}
         </span>
         <span className="character-info__ubication">
-          You can find me in <strong>{characterProps.location}</strong>
+          You can find me in <strong>{characterProps.location.name}</strong>
         </span>
       </div>
     </CharacterCardStyled>

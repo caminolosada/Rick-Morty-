@@ -7,10 +7,12 @@ describe("Given a CharacterList component", () => {
   describe("When it is rendered", () => {
     test("Then it should show a list of characters with one of them named 'Rick Sanchez'", () => {
       renderWithProviders(
-        wrapWithRouter(<CharacterList characterProps={charactersMock} />)
+        wrapWithRouter(
+          <CharacterList characterProps={charactersMock.results} />
+        )
       );
 
-      const expectedName = "Rick Sanchez";
+      const expectedName = charactersMock.results[0].name;
 
       const characterName = screen.getByRole("heading", { name: expectedName });
 
