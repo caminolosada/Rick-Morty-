@@ -20,17 +20,18 @@ const CharacterListPage = (): React.ReactElement => {
   return (
     <>
       <CharacterListPageStyled>
-        <h1 className="title">Characters</h1>
-        <div className="decoration">
+        <div className="title">
+          <h1 className="title__name">Characters</h1>
           <img
+            className="title__decoration"
             src="/images/line.svg"
             alt="decorative separating line"
             width={135.61}
             height={0.5}
           />
         </div>
+        <CharacterList characterProps={characters} />
       </CharacterListPageStyled>
-      <CharacterList characterProps={characters} />
     </>
   );
 };
