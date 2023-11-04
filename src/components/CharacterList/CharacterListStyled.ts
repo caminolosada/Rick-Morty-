@@ -5,7 +5,6 @@ const CharacterListStyled = styled.ul`
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  margin-bottom: 275px;
 
   @media (min-width: 600px) {
     display: grid;
