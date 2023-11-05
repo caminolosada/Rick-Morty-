@@ -3,6 +3,7 @@ import { charactersMock } from "../../mocks/charactersMock";
 import useCharacters from "./useCharacters";
 import { server } from "../../mocks/node";
 import { errorHandlers } from "../../mocks/handlers";
+import { wrapWithProviders } from "../../utils/testUtils";
 
 describe("Given an useCharacters function", () => {
   describe("When it calls the getCharacters function", () => {
@@ -13,7 +14,7 @@ describe("Given an useCharacters function", () => {
         result: {
           current: { getCharacters },
         },
-      } = renderHook(() => useCharacters());
+      } = renderHook(() => useCharacters(), { wrapper: wrapWithProviders });
 
       const response = await getCharacters();
 
@@ -28,7 +29,7 @@ describe("Given an useCharacters function", () => {
         result: {
           current: { getCharacters },
         },
-      } = renderHook(() => useCharacters());
+      } = renderHook(() => useCharacters(), { wrapper: wrapWithProviders });
 
       expect(getCharacters()).rejects.toThrowError();
     });
