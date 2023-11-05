@@ -30,7 +30,7 @@ const CharacterCardStyled = styled.article`
       color: ${(props) => props.theme.colors.deatils};
       font-size: ${(props) => props.theme.fontSize.mediumLarge};
       font-weight: ${(props) => props.theme.fontWeight.bold};
-      margin-top: 157px;
+      margin-top: 137px;
     }
 
     &__species {
@@ -47,6 +47,9 @@ const CharacterCardStyled = styled.article`
       max-width: 160px;
       margin-top: 8px;
     }
+  }
+  .isNotVisible {
+    display: none;
   }
 `;
 
