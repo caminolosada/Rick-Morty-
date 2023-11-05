@@ -1,10 +1,20 @@
 import Button from "../Button/Button";
 import LoadMoreStyled from "./LoadMoreSyled";
 
-const LoadMore = (): React.ReactElement => {
+interface LoadMoreProps {
+  onClick: () => void;
+}
+
+const LoadMore = ({ onClick }: LoadMoreProps): React.ReactElement => {
   return (
     <LoadMoreStyled>
-      <Button classname="load_button" text="Load more" title="Load more" />;
+      <Button
+        classname="load_button"
+        text="Load more"
+        title="Load more"
+        actionOnClick={onClick}
+      />
+      ;
     </LoadMoreStyled>
   );
 };

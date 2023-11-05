@@ -9,6 +9,7 @@ const LoadMoreStyled = styled.div`
     width: 254px;
     height: 81px;
     border-radius: 15px;
+    border: 3px solid ${(props) => props.theme.colors.deatils};
     font-size: ${(props) => props.theme.fontSize.large};
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     display: flex;
