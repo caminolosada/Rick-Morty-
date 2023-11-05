@@ -19,9 +19,18 @@ export const charactersSlice = createSlice({
       _currentCharactersState,
       action: PayloadAction<DbResponseStructure>
     ): DbResponseStructure => action.payload,
+    loadMoreCharacters: (
+      currentCharactersState,
+      action: PayloadAction<DbResponseStructure>
+    ): DbResponseStructure => ({
+      results: [...currentCharactersState.results, ...action.payload.results],
+      info: action.payload.info,
+    }),
   },
 });
 
-export const { loadCharacters: loadCharactersActionCreator } =
-  charactersSlice.actions;
+export const {
+  loadCharacters: loadCharactersActionCreator,
+  loadMoreCharacters: loadMoreCharactersActionCreator,
+} = charactersSlice.actions;
 export const charactersReducer = charactersSlice.reducer;
