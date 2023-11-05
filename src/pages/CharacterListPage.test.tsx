@@ -52,7 +52,7 @@ describe("Given a CharacterListPage", () => {
       const newCharactersCollectionLength =
         store.getState().characters.results.length;
 
-      expect(newCharactersCollectionLength).toBe(
+      expect(newCharactersCollectionLength).toStrictEqual(
         expectedCharacterCollectionLength
       );
     });

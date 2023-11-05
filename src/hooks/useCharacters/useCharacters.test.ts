@@ -34,4 +34,17 @@ describe("Given an useCharacters function", () => {
       expect(getCharacters()).rejects.toThrowError();
     });
   });
+  describe("When the getCharacters function is called and an error occurs", () => {
+    test("Then it should throw an error", () => {
+      server.resetHandlers(...errorHandlers);
+
+      const {
+        result: {
+          current: { loadMoreCharacters },
+        },
+      } = renderHook(() => useCharacters(), { wrapper: wrapWithProviders });
+
+      expect(loadMoreCharacters()).rejects.toThrowError();
+    });
+  });
 });
