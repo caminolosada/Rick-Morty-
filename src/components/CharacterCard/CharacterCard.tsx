@@ -19,11 +19,51 @@ const CharacterCard = ({
       />
       <div className="character-info">
         <h2 className="character-info__name">{characterProps.name}</h2>
-        <span className="character-info__species">
+        <span
+          className={
+            characterProps.species !== "unknown"
+              ? "character-info__species"
+              : "isNotVisible"
+          }
+        >
           {characterProps.species}
         </span>
-        <span className="character-info__ubication">
+        <span
+          className={
+            characterProps.species === "unknown"
+              ? "character-info__species"
+              : "isNotVisible"
+          }
+        >
+          Who knows?
+        </span>
+        <span
+          className={
+            characterProps.status === "Alive"
+              ? "character-info__ubication"
+              : "isNotVisible"
+          }
+        >
           You can find me in <strong>{characterProps.location.name}</strong>
+        </span>
+        <span
+          className={
+            characterProps.status === "Dead"
+              ? "character-info__ubication"
+              : "isNotVisible"
+          }
+        >
+          You can not find me because I am{" "}
+          <strong>{characterProps.status.toLowerCase()}</strong>
+        </span>
+        <span
+          className={
+            characterProps.status === "unknown"
+              ? "character-info__ubication"
+              : "isNotVisible"
+          }
+        >
+          Sorry, mate, I can not give you more information about myself
         </span>
       </div>
     </CharacterCardStyled>
