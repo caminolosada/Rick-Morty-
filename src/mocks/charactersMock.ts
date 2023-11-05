@@ -5,7 +5,7 @@ export const charactersMock: DbResponseStructure = {
     count: 826,
     pages: 42,
     next: "https://rickandmortyapi.com/api/character?page=2",
-    prev: null,
+    prev: "",
   },
   results: [
     {
@@ -61,4 +61,55 @@ export const emptyMock: DbResponseStructure = {
     next: "",
     prev: "",
   },
+};
+
+export const loadMoreCharactersMock: DbResponseStructure = {
+  info: {
+    count: 826,
+    pages: 42,
+    next: "https://rickandmortyapi.com/api/character?page=3",
+    prev: "https://rickandmortyapi.com/api/character?page=1",
+  },
+  results: [
+    {
+      id: 21,
+      name: "Aqua Morty",
+      status: "unknown",
+      species: "Humanoid",
+      type: "Fish-Person",
+      gender: "Male",
+      origin: {
+        name: "unknown",
+        url: "",
+      },
+      location: {
+        name: "Citadel of Ricks",
+        url: "https://rickandmortyapi.com/api/location/3",
+      },
+      image: "https://rickandmortyapi.com/api/character/avatar/21.jpeg",
+      episode: [],
+      url: "https://rickandmortyapi.com/api/character/21",
+      created: "2017-11-04T22:39:48.055Z",
+    },
+    {
+      id: 22,
+      name: "Aqua Rick",
+      status: "unknown",
+      species: "Humanoid",
+      type: "Fish-Person",
+      gender: "Male",
+      origin: {
+        name: "unknown",
+        url: "",
+      },
+      location: {
+        name: "Citadel of Ricks",
+        url: "https://rickandmortyapi.com/api/location/3",
+      },
+      image: "https://rickandmortyapi.com/api/character/avatar/22.jpeg",
+      episode: [],
+      url: "https://rickandmortyapi.com/api/character/22",
+      created: "2017-11-04T22:41:07.171Z",
+    },
+  ],
 };
