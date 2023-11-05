@@ -21,8 +21,8 @@ export interface DbResponseStructure {
 export interface InfoStructure {
   count: number;
   pages: number;
-  next: string | null;
-  prev: string | null;
+  next: string;
+  prev: string;
 }
 
 export interface NameUrlStructure {

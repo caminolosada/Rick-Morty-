@@ -2,12 +2,17 @@ import { useEffect } from "react";
 import CharacterList from "../components/CharacterList/CharacterList";
 import useCharacters from "../hooks/useCharacters/useCharacters";
 import { useAppDispatch, useAppSelector } from "../store";
-import { loadCharactersActionCreator } from "../store/characters/charactersSlice";
+import {
+  loadCharactersActionCreator,
+  loadMoreCharactersActionCreator,
+} from "../store/characters/charactersSlice";
 import CharacterListPageStyled from "./CharacterListPageStyled";
+import LoadMore from "../components/LoadMore/LoadMore";
 
 const CharacterListPage = (): React.ReactElement => {
   const characters = useAppSelector((state) => state.characters.results);
-  const { getCharacters } = useCharacters();
+
+  const { getCharacters, loadMoreCharacters } = useCharacters();
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -17,6 +22,11 @@ const CharacterListPage = (): React.ReactElement => {
       dispatch(loadCharactersActionCreator(characters));
     })();
   }, [dispatch, getCharacters]);
+
+  const handleOnClick = async () => {
+    const nextCharacters = await loadMoreCharacters();
+    dispatch(loadMoreCharactersActionCreator(nextCharacters));
+  };
   return (
     <CharacterListPageStyled>
       <div className="title">
@@ -30,6 +40,7 @@ const CharacterListPage = (): React.ReactElement => {
         />
       </div>
       <CharacterList characterProps={characters} />
+      <LoadMore onClick={handleOnClick} />
     </CharacterListPageStyled>
   );
 };
