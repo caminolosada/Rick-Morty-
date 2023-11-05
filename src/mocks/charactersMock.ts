@@ -113,3 +113,54 @@ export const loadMoreCharactersMock: DbResponseStructure = {
     },
   ],
 };
+
+export const rareCharactersMock: DbResponseStructure = {
+  info: {
+    count: 826,
+    pages: 42,
+    next: "",
+    prev: "",
+  },
+  results: [
+    {
+      id: 35432,
+      name: "Rare Mock 1",
+      status: "unknown",
+      species: "unknown",
+      type: "",
+      gender: "",
+      origin: {
+        name: "",
+        url: "",
+      },
+      location: {
+        name: "",
+        url: "",
+      },
+      image: "",
+      episode: [],
+      url: "",
+      created: "",
+    },
+    {
+      id: 35433,
+      name: "Rare Mock 2",
+      status: "Dead",
+      species: "unknown",
+      type: "",
+      gender: "",
+      origin: {
+        name: "",
+        url: "",
+      },
+      location: {
+        name: "",
+        url: "",
+      },
+      image: "",
+      episode: [],
+      url: "",
+      created: "",
+    },
+  ],
+};
